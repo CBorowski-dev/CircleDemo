@@ -18,12 +18,13 @@ public class DrawPanel extends JPanel {
     public void paintComponent(Graphics g) {
         // draw grid
         Dimension d = getSize();
-        // System.out.println(d.width + " " + d.height);
+
         float x_width = ((float)d.width) / x_size;
+        float y_height = ((float) d.height) / y_size;
+
         for (float x = 0; x<d.width; x += x_width) {
             g.drawLine((int)x, 0, (int)x, d.height);
         }
-        float y_height = ((float) d.height) / y_size;
         for (float y = 0; y<d.height; y += y_height) {
             g.drawLine(0, (int)y, d.width, (int)y);
         }
@@ -34,7 +35,13 @@ public class DrawPanel extends JPanel {
     }
 
     public void drawPixel(int x, int y) {
+        // Pixels are added to a list of pixels ...
         pixels.add(new Coordinate(x + x_size/2, y + y_size/2));
+
+        // ... and drawn when the paintComponent(Graphics)
+        // methods is called by the Swing/AWT runtime.
+        // Calling repaint() signals the Swing/AWT runtime to call
+        // paintComponent(Graphics) asynchronously as soon as possible.
         repaint();
     }
 }

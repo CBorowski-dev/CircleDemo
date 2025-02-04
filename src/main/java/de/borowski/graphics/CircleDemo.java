@@ -5,7 +5,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 /**
- * Implementation of https://algo.rwth-aachen.de/~algorithmus/algo32.php
+ * Implementation of <a href="https://algo.rwth-aachen.de/~algorithmus/algo32.php">Kreise zeichnen mit Turbo</a>
  */
 public class CircleDemo {
 
