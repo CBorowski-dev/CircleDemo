@@ -29,7 +29,8 @@ public class DrawPanel extends JPanel {
             g.drawLine(0, (int)y, d.width, (int)y);
         }
         // draw pixels
-        for (Coordinate c : pixels) {
+        for (int i=0; i<pixels.size(); i++) {
+            Coordinate c = pixels.get(i);
             g.fillRect((int) (c.x * x_width), (int) (c.y * y_height), (int)x_width + 1, (int)y_height + 1);
         }
     }
